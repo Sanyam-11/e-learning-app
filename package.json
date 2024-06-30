@@ -28,7 +28,7 @@
     "dev": "vite",
     "start": "vite",
     "predeploy": "vite build",
-    "deploy": "development -d build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "preview": "vite preview"
   },
