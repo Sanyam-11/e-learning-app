@@ -14,6 +14,7 @@ import OrderScreen from './screens/OrderScreen';
 import { Container } from "react-bootstrap";
 import {  Route, Routes } from "react-router-dom";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default function App()
 {
   return (
