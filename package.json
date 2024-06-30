@@ -1,5 +1,5 @@
 {
-  "name": "front-end",
+  "name": "elearning",
   "proxy": "http://127.0.0.1:4000",
   "version": "0.1.0",
   "private": true,
@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "vite": "^5.3.2"
   }
 }
