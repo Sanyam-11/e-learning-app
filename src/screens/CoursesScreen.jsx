@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import Course from "../components/Course.js";
-import ImageSlider from "../components/ImageSlider";
+import Course from "../components/Course.jsx";
+import ImageSlider from "../components/ImageSlider.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col } from "react-bootstrap";
 import { listCourses } from "../actions/courseActions";
-import Message from "../components/Message";
-import Loader from "../components/Loader";
+import Message from "../components/Message.jsx";
+import Loader from "../components/Loader.jsx";
 
 const CourseScreen = () => {
   const dispatch = useDispatch();

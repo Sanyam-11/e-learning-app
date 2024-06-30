@@ -22,7 +22,7 @@ import Img6 from '../Images/10.png';
 import Img7 from '../Images/11.png';
 import Img8 from '../Images/12.png';
 import Img9 from '../Images/13.png';
-import Img10 from '../Images/Certified.PNG';
+import Img10 from '../Images/Certified.png';
 import '../App.css';
 //import axios from "axios";
 

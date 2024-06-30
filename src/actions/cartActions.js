@@ -4,9 +4,10 @@ import {
   CART_REMOVE_ITEM,
   CART_SAVE_PAYMENT_METHOD,
 } from "../constants/cartConstants";
+import { API_URL } from "../constants/userConstants";
 
 export const addToCart = (id) => async (dispatch, getState) => {
-  const { data } = await axios.get(`/api/coursebyid/${id}`);
+  const { data } = await axios.get(API_URL+`/api/coursebyid/${id}`);
 
   dispatch({
     type: CART_ADD_ITEM,

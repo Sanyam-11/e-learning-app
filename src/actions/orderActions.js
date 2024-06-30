@@ -21,6 +21,7 @@ import {
   // ORDER_DELIVER_REQUEST,
 } from '../constants/orderConstants'
 import { logout } from './userActions'
+import { API_URL } from '../constants/userConstants'
 
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
@@ -39,7 +40,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.post(`/api/createorder`, order, config)
+    const { data } = await axios.post(API_URL+`/api/createorder`, order, config)
 
     dispatch({
       type: ORDER_CREATE_SUCCESS,
@@ -81,7 +82,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/orderbyid/${id}`, config)
+    const { data } = await axios.get(API_URL+`/api/orderbyid/${id}`, config)
 
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
@@ -241,7 +242,7 @@ export const listOrders = () => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/getallorders`, config)
+    const { data } = await axios.get(API_URL+`/api/getallorders`, config)
 
     dispatch({
       type: ORDER_LIST_SUCCESS,

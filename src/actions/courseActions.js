@@ -8,6 +8,7 @@ import {
   } from "../constants/courseConstants";
   
    import axios from "axios";
+import { API_URL } from "../constants/userConstants";
   //import axios, * as others from "axios";
   
   export const listCourses = () => async (dispatch) => {
@@ -16,7 +17,7 @@ import {
         type: COURSE_LIST_REQUEST,
       });
   
-      const { data } = await axios.get("/api/getallcourses");
+      const { data } = await axios.get(API_URL+"/api/getallcourses");
   
       dispatch({
         type: COURSE_LIST_SUCCESS,
@@ -36,7 +37,7 @@ import {
         type: COURSE_DETAIL_REQUEST,
       });
   
-      const { data } = await axios.get(`/api/coursebyid/${id}`);
+      const { data } = await axios.get(API_URL+`/api/coursebyid/${id}`);
   
       dispatch({
         type: COURSE_DETAIL_SUCCESS,

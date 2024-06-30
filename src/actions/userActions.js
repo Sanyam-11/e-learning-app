@@ -27,6 +27,7 @@ import {
 } from "../constants/userConstants";
 
 //import { ORDER_LIST_MY_RESET } from "../constants/orderConstants";
+import {API_URL} from "../constants/userConstants";
 
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -41,7 +42,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "/api/login",
+      API_URL+"/api/login",
       { email, password },
       config
     );
@@ -88,7 +89,7 @@ export const register = (name, email, mobile, address, password) => async (dispa
     };
 
     const { data } = await axios.post(
-      "/api/createuser",
+      API_URL+"/api/createuser",
       { name, email, mobile, address, password },
       config
     );
@@ -131,7 +132,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/userbyid/${id}`, config);
+    const { data } = await axios.get(API_URL+`/api/userbyid/${id}`, config);
 
     dispatch({
       type: USER_DETAILS_SUCCESS,
@@ -211,7 +212,7 @@ export const listUsers = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/getallusers`, config);
+    const { data } = await axios.get(API_URL+`/api/getallusers`, config);
 
     dispatch({
       type: USER_LIST_SUCCESS,
@@ -248,7 +249,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
       },
     };
 
-    await axios.delete(`/api/removeuserbyid/${id}`, config);
+    await axios.delete(API_URL+`/api/removeuserbyid/${id}`, config);
 
     dispatch({ type: USER_DELETE_SUCCESS });
   } catch (error) {
@@ -283,7 +284,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.put(`/api/updateuserbyid/${user._id}`, user, config);
+    const { data } = await axios.put(API_URL+`/api/updateuserbyid/${user._id}`, user, config);
 
     dispatch({ type: USER_UPDATE_SUCCESS });
 
