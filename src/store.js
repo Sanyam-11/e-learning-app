@@ -1,6 +1,4 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
 import {
   courseListReducer,
   courseDetailsReducer,
@@ -20,6 +18,7 @@ import {
   orderDetailsReducer,
   orderListReducer,
 } from './reducers/orderReducers';
+import { thunk } from "redux-thunk";
 
 const reducer = combineReducers({
   courseList: courseListReducer,
@@ -57,7 +56,7 @@ const middleware = [thunk];
 const store = createStore(
   reducer,
   initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
+  applyMiddleware(...middleware)
 );
 
 export default store;

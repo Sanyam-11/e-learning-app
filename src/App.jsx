@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomeScreen from "./screens/HomeScreen";
@@ -13,30 +12,32 @@ import RegisterScreen from "./screens/RegisterScreen";
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import { Container } from "react-bootstrap";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 
 export default function App()
 {
   return (
-    <Router>
-      <Header />
-      <main className='py-3'>
-        <Container>
-          <Route path='/' component={HomeScreen} exact/>
-          <Route path='/courses' component={CoursesScreen} />
-          <Route path='/course/:id' component={CourseDescScreen} />
-          <Route path='/cart/:id?' component={CartScreen} />
-          <Route path='/contactus' component={ContactScreen} />
-          <Route path='/aboutus' component={AboutScreen} />
-          <Route path='/login' component={LoginScreen} />
-          <Route path='/register' component={RegisterScreen} />
-          <Route path='/payment' component={PaymentScreen} />
-          <Route path='/placeorder' component={PlaceOrderScreen} />
-          <Route path='/orderbyid/:id' component={OrderScreen} />
-          </Container>
+    <div>
+    <Header />
+    <main className='py-3'>
+      <Container>
+    <Routes>
+          <Route path='/' element={<HomeScreen/>} exact/>
+          <Route path='/courses' element={<CoursesScreen/>} />
+          <Route path='/course/:id' element={<CourseDescScreen/> } />
+          <Route path='/cart/:id?' element={<CartScreen /> } />
+          <Route path='/contactus' element={<ContactScreen/> } />
+          <Route path='/aboutus' element={<AboutScreen/> } />
+          <Route path='/login' element={<LoginScreen/> } />
+          <Route path='/register' element={<RegisterScreen/> } />
+          <Route path='/payment' element={<PaymentScreen/> } />
+          <Route path='/placeorder' element={<PlaceOrderScreen/> } />
+          <Route path='/orderbyid/:id'  element={<OrderScreen/> } />
+          
+    </Routes></Container>
       </main>
       <br/><br/><br/><br/><br/>
       <Footer />
-    </Router>
+    </div>
   );
 }
