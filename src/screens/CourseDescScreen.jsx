@@ -12,7 +12,7 @@ import { listCourseDetails } from "../actions/courseActions";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Img1 from '../Images/5.png';
 import Img2 from '../Images/6.png';
 import Img3 from '../Images/7.png';
@@ -39,8 +39,9 @@ import '../App.css';
 //      fetchCourse();
 // }, [match]);
 
-export default function CourseScreen({ history, match }) {
+export default function CourseScreen({  match }) {
   const dispatch = useDispatch();
+  const history = useNavigate();
 
   const checkoutHandler = () => {
     history.push(`/cart/${match.params.id}`)

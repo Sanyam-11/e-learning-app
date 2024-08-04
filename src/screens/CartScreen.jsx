@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Row,
@@ -13,8 +13,10 @@ import Message from "../components/Message";
 import { addToCart, removeFromCart } from "../actions/cartActions";
 import '../App.css';
 
-const CartScreen = ({ match, location, history }) => {
+const CartScreen = ({ match }) => {
   const courseId = match.params.id;
+  const location = useLocation();
+  const history = useNavigate();
 
   //const qty = location.search ? Number(location.search.split("=")[1]) : 1;
 

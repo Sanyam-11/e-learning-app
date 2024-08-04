@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation,  useNavigate } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
@@ -8,9 +8,11 @@ import FormContainer from "../components/FormContainer";
 import { login } from "../actions/userActions";
 import '../App.css';
 
-const LoginScreen = ({ location, history }) => {
+const LoginScreen = () => {
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
+ const location = useLocation();
+ const history = useNavigate();
 
   const dispatch = useDispatch();
 

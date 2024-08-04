@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 // import { PayPalButton } from 'react-paypal-button-v2'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Row, Col, ListGroup, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
@@ -12,8 +12,9 @@ import {
 
 
 
-const OrderScreen = ({ match, history }) => {
+const OrderScreen = ({ match }) => {
   const orderId = match.params.id
+  const history = useNavigate();
 
   //const [sdkReady, setSdkReady] = useState(false)
 

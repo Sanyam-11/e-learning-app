@@ -5,12 +5,14 @@ import FormContainer from "../components/FormContainer";
 import CheckoutSteps from "../components/CheckoutSteps";
 import { savePaymentMethod } from "../actions/cartActions";
 import '../App.css';
+import { useNavigate } from "react-router-dom";
 
-const PaymentScreen = ({ history }) => {
+const PaymentScreen = () => {
 
   const [paymentMethod, setPaymentMethod] = useState("Debit Card");
 
   const dispatch = useDispatch();
+  const history = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
